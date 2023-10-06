@@ -7,6 +7,7 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom';
 
 import Logo from '../../olx-logo.png';
 import './Signup.css';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 export default function Signup() {
 
@@ -90,7 +91,7 @@ export default function Signup() {
           <br />
           <button>Signup</button>
         </form>
-        <a>Login</a>
+        <a><Link to={"/login"}>Login</Link></a>
       </div>
     </div>
   );

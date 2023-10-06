@@ -110,6 +110,14 @@
   margin: 0;
   background-color: black;
   height: 2px;
+
+}
+
+.loginPage button{
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
 }
 
 .loginPage a{

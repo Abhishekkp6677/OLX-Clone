@@ -5,6 +5,7 @@ import './Login.css';
 import { auth } from '../../Config/Firebase-Config';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 function Login() {
   const[Email,setEmail]=useState('')
@@ -53,7 +54,7 @@ function Login() {
           <br />
           <button>Login</button>
         </form>
-        <a>Signup</a>
+        <a><Link to={'/signup'}>Signup</Link></a>
       </div>
     </div>
   );

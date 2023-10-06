@@ -3,6 +3,8 @@ import { signOut } from 'firebase/auth';
 import { auth } from '../../Config/Firebase-Config';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom';
 
+
+
 import './Header.css';
 import OlxLogo from '../../assets/OlxLogo';
 import Search from '../../assets/Search';
@@ -10,9 +12,18 @@ import Arrow from '../../assets/Arrow';
 import SellButton from '../../assets/SellButton';
 import SellButtonPlus from '../../assets/SellButtonPlus';
 import { AuthContext } from '../../store/Context';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 function Header() {
+  
+  
   const{user}=useContext(AuthContext)
   const history=useHistory()
+  
+  const moveToLogin =()=>{
+    history.push('/login')
+  }
+  
+  
 
   const logout= async()=>{
     try{
@@ -53,8 +64,12 @@ function Header() {
           <Arrow></Arrow>
         </div>
         <div className="loginPage">
-          <span >{user? user.displayName :'Login'}</span>
+          <button onClick={moveToLogin}>
+          {user? user.displayName :'Login'}
           <hr />
+          
+          </button>
+          
         </div>
         {user&& <span onClick={logout}>Logout</span>}
 
