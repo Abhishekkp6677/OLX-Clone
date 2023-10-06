@@ -22,6 +22,15 @@ function Header() {
   const moveToLogin =()=>{
     history.push('/login')
   }
+  const moveToCreate =()=>{
+    const loggedIn = auth.currentUser;
+    if(loggedIn){
+      history.push('/create')
+    }else{
+      history.push('/login')
+    }
+  }
+
   
   
 
@@ -74,11 +83,13 @@ function Header() {
         {user&& <span onClick={logout}>Logout</span>}
 
         <div className="sellMenu">
+          <button onClick={moveToCreate}>
           <SellButton></SellButton>
           <div className="sellMenuContent">
             <SellButtonPlus></SellButtonPlus>
             <span>SELL</span>
           </div>
+          </button>
         </div>
       </div>
     </div>
